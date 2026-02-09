@@ -264,12 +264,12 @@ SplashScreen:
  idstart := 0
 
 +GameModeID_SplashScreen =					id(GameMode_SplashScreen)			; 0
- GameModeID_LevelSelectScreen =					id(GameMode_LevelSelectScreen)	; 4
+ GameModeID_LevelSelectScreen =					id(GameMode_LevelSelectScreen)			; 4
  GameModeID_LevelScreen =					id(GameMode_LevelScreen)			; 8
- GameModeID_ContinueScreen =					id(GameMode_ContinueScreen)		; C
+ GameModeID_ContinueScreen =					id(GameMode_ContinueScreen)			; C
 
  GameModeFlag_TitleCard =					7						; flag bit
- GameModeID_TitleCard =						setBit(GameModeFlag_TitleCard)		; flag mask
+ GameModeID_TitleCard =						setBit(GameModeFlag_TitleCard)			; flag mask
 ```
 
 Теперь нужно включить экран **Splash Screen'a** в `Game mode routines`, который находится в [Engine/Core/Security Startup 2.asm](https://github.com/TheBlad768/Sonic-Clean-Engine-S.C.E.-/blob/Clone-Driver-v2/Engine/Core/Security%20Startup%202.asm). Добавим его в список игровых режимов:
@@ -281,9 +281,9 @@ SplashScreen:
 
  Game_Modes:
 +		GameModeEntry SplashScreen						; Splash mode
-		GameModeEntry LevelSelectScreen					; Level Select mode (SCE)
+		GameModeEntry LevelSelectScreen						; Level Select mode (SCE)
 		GameModeEntry LevelScreen						; Zone play mode
-		GameModeEntry ContinueScreen					; Continue mode
+		GameModeEntry ContinueScreen						; Continue mode
 ```
 
 Макрос `GameModeEntry` будет использовать вставленную переменную для поиска экрана. Поэтому названия должы быть одинаковые.
