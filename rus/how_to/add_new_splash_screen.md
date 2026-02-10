@@ -24,7 +24,7 @@
     └── 📁 Splash Screen    <= СОЗДАЙ МЕНЯ 🥺
 ```
 
-Для **Splash Screen'а** нужны данные, такие как: _графика, карта, палитра_. В этом гайде мы добавляем уже готовые данные, если вы хотите сделать свою картинку, то вам нужно _создать свои новые файлы_, это уже в гайде `"Как построить план?"`. 
+Для **Splash Screen'а** нужны данные, такие как: _тайловая графика, карта, палитра_. В этом гайде мы добавляем уже готовые данные, если вы хотите сделать свою картинку, то вам нужно _создать свои новые файлы_, это уже в гайде `"Как построить план?"`. 
 
 Для этого гайда мы возьмём готовые данные из исходника [Sonic-1-in-Sonic-3-S.C.E.-](https://github.com/TheBlad768/Sonic-1-in-Sonic-3-S.C.E.-/tree/flamedriver/Screens/Sega).
 
@@ -35,8 +35,8 @@
 └── 📁 Screens
     └── 📁 Sega
         └── 📁 S3K
-            ├── 📁 Enigma Map        <<= КОПИРУЮ
-            └── 📁 KosinskiPM Art    <<= КОПИРУЮ
+            ├── 📁 Enigma Map        <<= СКОПИРОВАТЬ
+            └── 📁 KosinskiPM Art    <<= СКОПИРОВАТЬ
 ```
  
 [Palettes](https://github.com/TheBlad768/Sonic-Clean-Engine-S.C.E.-/tree/Clone-Driver-v2/Screens/Level%20Select/Palettes "Palettes") скопируем из [Screens/Level Select](https://github.com/TheBlad768/Sonic-Clean-Engine-S.C.E.-/tree/Clone-Driver-v2/Screens/Level%20Select "Level Select"), который можно найти в родительской директории.
@@ -170,7 +170,7 @@ SplashScreen:
 		└── 📄 Splash.asm
 ```
 
-# Прописываем графические данные
+# Прописываем данные
 
 Теперь нам нужно прописать данные **Splash Screen'a**. В папке [Data](https://github.com/TheBlad768/Sonic-Clean-Engine-S.C.E.-/tree/Clone-Driver-v2/Data "Data") нужно будет добавить эти строки в следующие файлы:
 
@@ -196,7 +196,7 @@ SplashScreen:
 		incfile.b	ArtKosPM_Splash, "Screens/Splash/KosinskiPM Art/Foreground.kospm"
 ```
 
-Карту в [Enigma Data.asm](https://github.com/TheBlad768/Sonic-Clean-Engine-S.C.E.-/blob/Clone-Driver-v2/Data/Enigma%20Data.asm "Enigma Data.asm"):
+Enigma-карту в [Enigma Data.asm](https://github.com/TheBlad768/Sonic-Clean-Engine-S.C.E.-/blob/Clone-Driver-v2/Data/Enigma%20Data.asm "Enigma Data.asm"):
 
 ```m68k
 ; ===========================================================================
@@ -208,7 +208,7 @@ SplashScreen:
 		incfile.b	MapEni_Splash, "Screens/Splash/Enigma Map/Foreground.eni"
 ```
 
-Палитры в [Palette Data.asm](https://github.com/TheBlad768/Sonic-Clean-Engine-S.C.E.-/blob/Clone-Driver-v2/Data/Palette%20Data.asm "Palette Data.asm"):
+Палитру в [Palette Data.asm](https://github.com/TheBlad768/Sonic-Clean-Engine-S.C.E.-/blob/Clone-Driver-v2/Data/Palette%20Data.asm "Palette Data.asm"):
 
 ```m68k
 ; ===========================================================================

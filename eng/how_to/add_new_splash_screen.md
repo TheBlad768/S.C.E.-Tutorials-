@@ -1,10 +1,58 @@
 # SONIC-CLEAN-ENGINE-S.C.E.-TUTORIALS-
 
-# How to add a new Splash Screen?
+# How to add a new Splash Screen
 
-First, we need to open the `Screens` folder and create a new folder, for example: `Splash` for our new Splash Screen.
+- [Creating files](#creating-files)
+	- [Splash.asm](#splashasm)
+	- [Splash Screen Folder Tree](#splash-screen-folder-tree)
+- [Registering the data](#registering-the-data)
+- [Enabling the Splash Screen](#enabling-the-splash-screen)
+	- [Changing the Initial Game Mode (Optional)](#changing-the-initial-game-mode-optional)
 
-Then we need to create a text file and rename it to `Splash.asm` and paste this ready-made code into `Splash.asm`:
+[← Back to previous page ](..)
+
+# Creating files
+
+First, let's create a `Splash Screen` folder in the [Screens](https://github.com/TheBlad768/Sonic-Clean-Engine-S.C.E.-/tree/Clone-Driver-v2/Screens) directory. Put all our new files in there.
+
+```
+📁 S.C.E. / S1-in-S3 (root)
+└── 📁 Screens
+    ├── 📁 Continue
+    ├── 📁 Level
+    ├── 📁 Level Select
+    └── 📁 Splash Screen    <= CREATE ME 🥺
+```
+
+For the **Splash Screen**, you’ll need some data, specifically: _tile art, Enigma map, and palettes_. In this guide, we’re adding ready-made data; if you want to make your own picture, you will need to _create your own new files_ — that’s covered in the `"How to Build a Plane?"` guide.
+
+For this guide, we'll grab ready-made data from the [Sonic-1-in-Sonic-3-S.C.E.-](https://www.google.com/search?q=https://github.com/TheBlad768/Sonic-1-in-Sonic-3-S.C.E.-/tree/flamedriver/Screens/Sega) source. 
+
+Copy the `Enigma Map` and `KosinskiPM Art` directories from [Screens/Sega/S3K](https://github.com/TheBlad768/Sonic-1-in-Sonic-3-S.C.E.-/tree/flamedriver/Screens/Sega/S3K) (in the Sonic-1-in-Sonic-3-S.C.E.- source) into our `Splash Screen` folder:
+
+```
+📁 S1-in-S3 (root)
+└── 📁 Screens
+    └── 📁 Sega
+        └── 📁 S3K
+            ├── 📁 Enigma Map        <<= COPY THIS
+            └── 📁 KosinskiPM Art    <<= COPY THIS
+```
+
+Copy the [Palettes](https://github.com/TheBlad768/Sonic-Clean-Engine-S.C.E.-/tree/Clone-Driver-v2/Screens/Level%20Select/Palettes) from [Screens/Level Select](https://github.com/TheBlad768/Sonic-Clean-Engine-S.C.E.-/tree/Clone-Driver-v2/Screens/Level%20Select), which you can find in the parent directory.
+
+```
+📁 S.C.E. / S1-in-S3 (root)
+└── 📁 Screens
+    └── 📁 Level Select
+    └── 📁 SCE
+        ├── 📁 KosinskiPM Art
+        └── 📁 Palettes    <<= COPY THIS
+```
+
+## Splash.asm
+
+Now, in our `Screens/Splash Screen` folder, let's create a text file named `Splash.asm` and paste this ready-to-go code into it:
 
 ```m68k
 ; ---------------------------------------------------------------------------
@@ -102,136 +150,42 @@ SplashScreen:
 		rts
 ```
 
-# Example of changes
+## Splash Screen Folder Tree
 
-```diff
-+ Add the green lines
-- Remove the red lines
+Here is what the contents of your `Screens/Splash Screen` folder should look like:
+
+```
+📁 S.C.E. / S1-in-S3 (root)
+└── 📁 Screens
+    ├── 📁 Continue
+    ├── 📁 Level
+    ├── 📁 Level Select
+    └── 📁 Splash Screen
+        ├── 📁 Enigma Map
+        │   └── 🗺️ Foreground.eni
+		├── 📁 KosinskiPM Art
+		│   └── 🖼️ Foreground.kospm
+		├── 📁 Palettes
+		│   └── 🎨 1.pal
+		└── 📄 Splash.asm
+```
+# Registering the data
+
+Now it's time to let our **Splash Screen** data "move in." In the [Data](https://github.com/TheBlad768/Sonic-Clean-Engine-S.C.E.-/tree/Clone-Driver-v2/Data) folder, you'll need to register these lines in the following files:
+
+```
+📁 S.C.E. / S1-in-S3 (корень)
+└── 📁 Data
+    ├── 📄 Enigma Data.asm
+    ├── 📄 Kosinski Plus Module Data.asm
+    └── 📄 Palette Data.asm
 ```
 
-Now, we need to open the `Includes.asm` file in the main `Engine` folder and find the list of included screens
+If you’re not sure where to "move these lines in," just drop them right before the **Level Select** lines.
 
-```diff
-; ---------------------------------------------------------------------------
-; Level Select screen modules
-; ---------------------------------------------------------------------------
+- For tile art in [Kosinski Plus Module Data.asm](https://github.com/TheBlad768/Sonic-Clean-Engine-S.C.E.-/blob/Clone-Driver-v2/Data/Kosinski%20Plus%20Module%20Data.asm "Kosinski Plus Module Data.asm"):
 
-		include "Screens/Level Select/Level Select.asm"
-
-; ---------------------------------------------------------------------------
-; Level screen modules
-; ---------------------------------------------------------------------------
-
-		include "Screens/Level/Level.asm"
 ```
-
-Now we need to add our Splash Screen to this `includes` list
-
-```diff
-+ ; ---------------------------------------------------------------------------
-+ ; Splash screen modules
-+ ; ---------------------------------------------------------------------------
-+
-+		include "Screens/Splash/Splash.asm"
-
-; ---------------------------------------------------------------------------
-; Level Select screen modules
-; ---------------------------------------------------------------------------
-
-		include "Screens/Level Select/Level Select.asm"
-
-; ---------------------------------------------------------------------------
-; Level screen modules
-; ---------------------------------------------------------------------------
-
-		include "Screens/Level/Level.asm"
-```
-
-Next, we need to open `Constants.asm` and add our new screen to the list of constants `Game mode routines`
-
-```diff
-; ---------------------------------------------------------------------------
-; Game mode routines
-; ---------------------------------------------------------------------------
-
-offset := Game_Modes
-ptrsize := 1
-idstart := 0
-
-GameModeID_LevelSelectScreen =					id(GameMode_LevelSelectScreen)			; 0
-GameModeID_LevelScreen =					id(GameMode_LevelScreen)			; 4
-
-GameModeFlag_TitleCard =					7						; flag bit
-GameModeID_TitleCard =						setBit(GameModeFlag_TitleCard)			; flag mask
-```
-
-It should look like this now:
-
-```diff
-; ---------------------------------------------------------------------------
-; Game mode routines
-; ---------------------------------------------------------------------------
-
-offset := Game_Modes
-ptrsize := 1
-idstart := 0
-
-+ GameModeID_SplashScreen =					id(GameMode_SplashScreen)			; 0
-GameModeID_LevelSelectScreen =					id(GameMode_LevelSelectScreen)			; 4
-GameModeID_LevelScreen =					id(GameMode_LevelScreen)			; 8
-
-GameModeFlag_TitleCard =					7						; flag bit
-GameModeID_TitleCard =						setBit(GameModeFlag_TitleCard)			; flag mask
-```
-
-Now you need to include the screen in `Game mode routines`. This is located in `Engine/Core`, and you need to open the `Security Startup 2.asm` file.
-
-Here you will find a list of screens:
-
-```diff
-; ---------------------------------------------------------------------------
-; Main game mode array
-; ---------------------------------------------------------------------------
-
-Game_Modes:
-		GameModeEntry LevelSelectScreen						; Level Select mode (SCE)
-		GameModeEntry LevelScreen						; Zone play mode
-```
-
-It should look like this now:
-
-```diff
-; ---------------------------------------------------------------------------
-; Main game mode array
-; ---------------------------------------------------------------------------
-
-Game_Modes:
-+		GameModeEntry SplashScreen						; Splash mode
-		GameModeEntry LevelSelectScreen						; Level Select mode (SCE)
-		GameModeEntry LevelScreen						; Zone play mode
-```
-
-`GameModeEntry` macro will use the inserted variable to search for the screen. Therefore, the names must be identical.
-
-If you want to change the startup screen, change this line of code in the `Security Startup 2.asm` file.
-
-```m68k
-		move.b	#GameModeID_LevelSelectScreen,(Game_mode).w			; set screen mode to Level Select (SCE)
-```
-
-To this line of code:
-
-```m68k
-		move.b	#GameModeID_SplashScreen,(Game_mode).w				; set screen mode to Splash Screen
-```
-
-Instead of `Level Select`, our new `Splash Screen` will now load first.
-
-Next, we need to add graphic data for the Splash Screen. Open the `Data` folder and include our new data in SCE.
-
-For art, this is `Kosinski Plus Module Data.asm`
-
-```diff
 ; ===========================================================================
 ; Kosinski Plus Module compressed Splash screen graphics
 ; ===========================================================================
@@ -241,9 +195,9 @@ For art, this is `Kosinski Plus Module Data.asm`
 		incfile.b	ArtKosPM_Splash, "Screens/Splash/KosinskiPM Art/Foreground.kospm"
 ```
 
-For mappings, this is `Enigma Data.asm`
+- For Enigma map in [Enigma Data.asm](https://github.com/TheBlad768/Sonic-Clean-Engine-S.C.E.-/blob/Clone-Driver-v2/Data/Enigma%20Data.asm "Enigma Data.asm"):
 
-```diff
+```
 ; ===========================================================================
 ; Enigma compressed Splash screen data
 ; ===========================================================================
@@ -253,9 +207,9 @@ For mappings, this is `Enigma Data.asm`
 		incfile.b	MapEni_Splash, "Screens/Splash/Enigma Map/Foreground.eni"
 ```
 
-For the palette, it is `Palette Data.asm`
+- For palettes in [Palette Data.asm](https://github.com/TheBlad768/Sonic-Clean-Engine-S.C.E.-/blob/Clone-Driver-v2/Data/Palette%20Data.asm "Palette Data.asm"):
 
-```diff
+```
 ; ===========================================================================
 ; Palette Splash screen data
 ; ===========================================================================
@@ -264,10 +218,87 @@ For the palette, it is `Palette Data.asm`
 
 		incfile.b	Pal_Splash, "Screens/Splash/Palettes/1.pal"
 ```
+# Enabling the Splash Screen
 
-How to create graphic data files for Splash Screen, see `this guide`.
+All that's left is to enable the new **Game Mode**. Below are the instructions on how to do it, or you can check out the changes in the GitHub commit [here](https://github.com/Nichloya/Sonic-Clean-Engine-S.C.E.-Extended-/commit/7b0651c7c2229bdf41811d974231aafbace5bcb5).
+
+```diff
++ Add the green lines
+- Remove the red lines
+```
+
+Include our `Screens/Splash Screen/Splash` by adding it to the include list in [Engine/Includes.asm](https://github.com/TheBlad768/Sonic-Clean-Engine-S.C.E.-/blob/Clone-Driver-v2/Engine/Includes.asm):
+
+```diff
+ ; ---------------------------------------------------------------------------
+ ; Objects data pointers
+ ; ---------------------------------------------------------------------------
+
+		include "Data/Objects Data.asm"
+
++; ---------------------------------------------------------------------------
++; Splash screen modules
++; ---------------------------------------------------------------------------
++
++		include "Screens/Splash/Splash.asm"
++
+ ; ---------------------------------------------------------------------------
+ ; Level Select screen modules
+ ; ---------------------------------------------------------------------------
+
+		include "Screens/Level Select/Level Select.asm"
+
+```
+
+In [Engine/Constants.asm](https://github.com/TheBlad768/Sonic-Clean-Engine-S.C.E.-/blob/Clone-Driver-v2/Engine/Constants.asm) add our new screen to the `Game mode routines` constant list:
+
+```diff
+ ; ---------------------------------------------------------------------------
+ ; Game mode routines
+ ; ---------------------------------------------------------------------------
+
+ offset := Game_Modes
+ ptrsize := 1
+ idstart := 0
+
++GameModeID_SplashScreen =					id(GameMode_SplashScreen)			; 0
+ GameModeID_LevelSelectScreen =					id(GameMode_LevelSelectScreen)			; 0
+ GameModeID_LevelScreen =					id(GameMode_LevelScreen)			; 4
+ GameModeID_ContinueScreen =					id(GameMode_ContinueScreen)			; 8
+
+ GameModeFlag_TitleCard =					7						; flag bit
+ GameModeID_TitleCard =						setBit(GameModeFlag_TitleCard)			; flag mask
+```
 
 
-## View other guides
+Now, include the **Splash Screen** in the `Game mode routines` located in [Engine/Core/Security Startup 2.asm](https://github.com/TheBlad768/Sonic-Clean-Engine-S.C.E.-/blob/Clone-Driver-v2/Engine/Core/Security%20Startup%202.asm). Add it to the game mode list:
 
-[Back to main page](../)
+```diff
+ ; ---------------------------------------------------------------------------
+ ; Main game mode array
+ ; ---------------------------------------------------------------------------
+
+ Game_Modes:
++		GameModeEntry SplashScreen						; Splash mode
+		GameModeEntry LevelSelectScreen					; Level Select mode (SCE)
+		GameModeEntry LevelScreen						; Zone play mode
+		GameModeEntry ContinueScreen					; Continue mode
+```
+
+The `GameModeEntry` macro uses the inserted variable to locate the screen, so the names must match exactly.
+
+## Changing the Initial Game Mode (Optional)
+
+If you want the game to start with the **Splash Screen** instead of the **Level Select**, change this line of code in [Engine/Core/Security Startup 2.asm](https://github.com/TheBlad768/Sonic-Clean-Engine-S.C.E.-/blob/Clone-Driver-v2/Engine/Core/Security%20Startup%202.asm)
+
+```m68k
+move.b	#GameModeID_LevelSelectScreen,(Game_mode).w
+```
+
+To this line:
+
+```m68k
+move.b	#GameModeID_SplashScreen,(Game_mode).w
+```
+
+Instead of **Level Select**, our new **Splash Screen** will now be the first thing to load.
