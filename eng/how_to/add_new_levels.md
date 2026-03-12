@@ -91,7 +91,7 @@ You can view the changes in this paragraph or in the GitHub commits [HERE](https
 ```diff
 		; DEZ
 		include "Levels/DEZ/Debug/DEZ1 - Debug List.asm"
-		
+
 +		; AIZ
 +		include "Levels/AIZ/Debug/AIZ1 - Debug List.asm"
 ```
@@ -121,13 +121,13 @@ You can view the changes in this paragraph or in the GitHub commits [HERE](https
 
  ;		Attribute	| Filename	| Folder
 
-		incfile.b	DEZ_8x8_KosPM, "Levels/DEZ/Tiles/Primary.kospm"
-		incfile.b	DEZ_16x16_Unc, "Levels/DEZ/Blocks/Primary.unc"
-		incfile.b	DEZ_128x128_KosP, "Levels/DEZ/Chunks/Primary.kosp"
-		
-+		incfile.b	AIZ_8x8_KosPM, "Levels/AIZ/Tiles/Primary.kospm"
-+		incfile.b	AIZ_16x16_Unc, "Levels/AIZ/Blocks/Primary.unc"
-+		incfile.b	AIZ_128x128_KosP, "Levels/AIZ/Chunks/Primary.kosp"
+		incfile.ba	DEZ_8x8_KosPM, "Levels/DEZ/Tiles/Primary.kospm"
+		incfile.ba	DEZ_16x16_Unc, "Levels/DEZ/Blocks/Primary.unc"
+		incfile.ba	DEZ_128x128_KosP, "Levels/DEZ/Chunks/Primary.kosp"
+
++		incfile.ba	AIZ_8x8_KosPM, "Levels/AIZ/Tiles/Primary.kospm"
++		incfile.ba	AIZ_16x16_Unc, "Levels/AIZ/Blocks/Primary.unc"
++		incfile.ba	AIZ_128x128_KosP, "Levels/AIZ/Chunks/Primary.kosp"
 ```
 
 ```diff
@@ -137,8 +137,8 @@ You can view the changes in this paragraph or in the GitHub commits [HERE](https
 
  ;		Attribute	| Filename	| Folder
 
-		incfile.b	DEZ_Solid_Unc, "Levels/DEZ/Collision/1.unc"		
-+		incfile.b	AIZ_Solid_Unc, "Levels/AIZ/Collision/1.unc"
+		incfile.ba	DEZ_Solid_Unc, "Levels/DEZ/Collision/1.unc"
++		incfile.ba	AIZ_Solid_Unc, "Levels/AIZ/Collision/1.unc"
 ```
 
 ```diff
@@ -148,16 +148,16 @@ You can view the changes in this paragraph or in the GitHub commits [HERE](https
 
  ;		Attribute	| Filename	| Folder
 
-		incfile.b	DEZ1_Layout_Unc, "Levels/DEZ/Layout/1.unc"
-		incfile.b	DEZ2_Layout_Unc, "Levels/DEZ/Layout/2.unc"
-		incfile.b	DEZ3_Layout_Unc, "Levels/DEZ/Layout/3.unc"
-		incfile.b	DEZ4_Layout_Unc, "Levels/DEZ/Layout/4.unc"
+		incfile.ba	DEZ1_Layout_Unc, "Levels/DEZ/Layout/1.unc"
+		incfile.ba	DEZ2_Layout_Unc, "Levels/DEZ/Layout/2.unc"
+		incfile.ba	DEZ3_Layout_Unc, "Levels/DEZ/Layout/3.unc"
+		incfile.ba	DEZ4_Layout_Unc, "Levels/DEZ/Layout/4.unc"
 
 
-+		incfile.b	AIZ1_Layout_Unc, "Levels/AIZ/Layout/1.unc"
-+		incfile.b	AIZ2_Layout_Unc, "Levels/AIZ/Layout/2.unc"
-+		incfile.b	AIZ3_Layout_Unc, "Levels/AIZ/Layout/3.unc"
-+		incfile.b	AIZ4_Layout_Unc, "Levels/AIZ/Layout/4.unc"	
++		incfile.ba	AIZ1_Layout_Unc, "Levels/AIZ/Layout/1.unc"
++		incfile.ba	AIZ2_Layout_Unc, "Levels/AIZ/Layout/2.unc"
++		incfile.ba	AIZ3_Layout_Unc, "Levels/AIZ/Layout/3.unc"
++		incfile.ba	AIZ4_Layout_Unc, "Levels/AIZ/Layout/4.unc"
 ```
 
 ```diff
@@ -170,15 +170,15 @@ You can view the changes in this paragraph or in the GitHub commits [HERE](https
 
  ;		Attribute	| Filename	| Folder
 
-		incfile.bo	DEZ1_Objects_Unc, "Levels/DEZ/Object Pos/1.unc"
-		incfile.bo	DEZ2_Objects_Unc, "Levels/DEZ/Object Pos/2.unc"
-		incfile.bo	DEZ3_Objects_Unc, "Levels/DEZ/Object Pos/3.unc"
-		incfile.bo	DEZ4_Objects_Unc, "Levels/DEZ/Object Pos/4.unc"
+		incfile.boa	DEZ1_Objects_Unc, "Levels/DEZ/Object Pos/1.unc"
+		incfile.boa	DEZ2_Objects_Unc, "Levels/DEZ/Object Pos/2.unc"
+		incfile.boa	DEZ3_Objects_Unc, "Levels/DEZ/Object Pos/3.unc"
+		incfile.boa	DEZ4_Objects_Unc, "Levels/DEZ/Object Pos/4.unc"
 
-+		incfile.bo	AIZ1_Objects_Unc, "Levels/AIZ/Object Pos/1.unc"
-+		incfile.bo	AIZ2_Objects_Unc, "Levels/AIZ/Object Pos/2.unc"
-+		incfile.bo	AIZ3_Objects_Unc, "Levels/AIZ/Object Pos/3.unc"
-+		incfile.bo	AIZ4_Objects_Unc, "Levels/AIZ/Object Pos/4.unc"	
++		incfile.boa	AIZ1_Objects_Unc, "Levels/AIZ/Object Pos/1.unc"
++		incfile.boa	AIZ2_Objects_Unc, "Levels/AIZ/Object Pos/2.unc"
++		incfile.boa	AIZ3_Objects_Unc, "Levels/AIZ/Object Pos/3.unc"
++		incfile.boa	AIZ4_Objects_Unc, "Levels/AIZ/Object Pos/4.unc"
 ```
 
 
@@ -192,22 +192,22 @@ You can view the changes in this paragraph or in the GitHub commits [HERE](https
 
  ;		Attribute	| Filename	| Folder
 
-		incfile.br	DEZ1_Rings_Unc, "Levels/DEZ/Ring Pos/1.unc"
-		incfile.br	DEZ2_Rings_Unc, "Levels/DEZ/Ring Pos/2.unc"
-		incfile.br	DEZ3_Rings_Unc, "Levels/DEZ/Ring Pos/3.unc"
-		incfile.br	DEZ4_Rings_Unc, "Levels/DEZ/Ring Pos/4.unc"
+		incfile.bra	DEZ1_Rings_Unc, "Levels/DEZ/Ring Pos/1.unc"
+		incfile.bra	DEZ2_Rings_Unc, "Levels/DEZ/Ring Pos/2.unc"
+		incfile.bra	DEZ3_Rings_Unc, "Levels/DEZ/Ring Pos/3.unc"
+		incfile.bra	DEZ4_Rings_Unc, "Levels/DEZ/Ring Pos/4.unc"
 
-+		incfile.br	AIZ1_Rings_Unc, "Levels/AIZ/Ring Pos/1.unc"
-+		incfile.br	AIZ2_Rings_Unc, "Levels/AIZ/Ring Pos/2.unc"
-+		incfile.br	AIZ3_Rings_Unc, "Levels/AIZ/Ring Pos/3.unc"
-+		incfile.br	AIZ4_Rings_Unc, "Levels/AIZ/Ring Pos/4.unc
++		incfile.bra	AIZ1_Rings_Unc, "Levels/AIZ/Ring Pos/1.unc"
++		incfile.bra	AIZ2_Rings_Unc, "Levels/AIZ/Ring Pos/2.unc"
++		incfile.bra	AIZ3_Rings_Unc, "Levels/AIZ/Ring Pos/3.unc"
++		incfile.bra	AIZ4_Rings_Unc, "Levels/AIZ/Ring Pos/4.unc
 ```
 ## Data/Levels Events.asm
 ```diff
  		include "Levels/DEZ/Tiles/Animated/DEZ1 - Animation PLC Scripts.asm"
  		include "Levels/DEZ/Palettes/Animated/DEZ1 - Animation Palette Scripts.asm"
  		include "Levels/DEZ/Events/DEZ1 - Events.asm"
- 		
+
 +		; AIZ
 +		include "Levels/AIZ/Tiles/Animated/AIZ1 - Animation PLC Scripts.asm"
 +		include "Levels/AIZ/Palettes/Animated/AIZ1 - Animation Palette Scripts.asm"
@@ -221,10 +221,10 @@ You can view the changes in this paragraph or in the GitHub commits [HERE](https
 
  ;		Attribute	| Filename	| Folder
 
-		incfile.be	Pal_DEZ, "Levels/DEZ/Palettes/Death Egg Zone.pal"
-		incfile.be	Pal_WaterDEZ, "Levels/DEZ/Palettes/Water Death Egg Zone.pal"
-+		incfile.be	Pal_AIZ, "Levels/AIZ/Palettes/Angel Island Zone.pal"
-+		incfile.be	Pal_WaterAIZ, "Levels/AIZ/Palettes/Water Angel Island Zone.pal"	
+		incfile.bea	Pal_DEZ, "Levels/DEZ/Palettes/Death Egg Zone.pal"
+		incfile.bea	Pal_WaterDEZ, "Levels/DEZ/Palettes/Water Death Egg Zone.pal"
++		incfile.bea	Pal_AIZ, "Levels/AIZ/Palettes/Angel Island Zone.pal"
++		incfile.bea	Pal_WaterAIZ, "Levels/AIZ/Palettes/Water Angel Island Zone.pal"
 
  ; ===========================================================================
  ; Animated palette Level screen data
@@ -232,10 +232,10 @@ You can view the changes in this paragraph or in the GitHub commits [HERE](https
 
  ;		Attribute	| Filename	| Folder
 
-		incfile.b	AnPal_PalDEZ12_1, "Levels/DEZ/Palettes/Animated/Palettes/1.pal"
-		incfile.b	AnPal_PalDEZ12_2, "Levels/DEZ/Palettes/Animated/Palettes/2.pal"
-+		incfile.b	AnPal_PalAIZ12_1, "Levels/AIZ/Palettes/Animated/Palettes/1.pal"
-+		incfile.b	AnPal_PalAIZ12_2, "Levels/AIZ/Palettes/Animated/Palettes/2.pal"
+		incfile.ba	AnPal_PalDEZ12_1, "Levels/DEZ/Palettes/Animated/Palettes/1.pal"
+		incfile.ba	AnPal_PalDEZ12_2, "Levels/DEZ/Palettes/Animated/Palettes/2.pal"
++		incfile.ba	AnPal_PalAIZ12_1, "Levels/AIZ/Palettes/Animated/Palettes/1.pal"
++		incfile.ba	AnPal_PalAIZ12_2, "Levels/AIZ/Palettes/Animated/Palettes/2.pal"
 ```
 ## Data/Palette Pointers.asm
 
@@ -252,7 +252,7 @@ You can view the changes in this paragraph or in the GitHub commits [HERE](https
  PLCAnimals_DEZ1: plrlistheader
   		plreq $580, ArtKosPM_BlueFlicky
    		plreq $592, ArtKosPM_Chicken
- PLCAnimals_DEZ1_end
+ 		plrlistend
 
 + ; ===========================================================================
 + ; Pattern load cues - Angel Island Zone (Before)
@@ -260,7 +260,7 @@ You can view the changes in this paragraph or in the GitHub commits [HERE](https
 +
 + PLC1_AIZ1_Before: plrlistheader
 + 		plreq $47E, ArtKosPM_GrayButton					; button
-+ PLC1_AIZ1_Before_end
++ 		plrlistend
 +
 + ; ===========================================================================
 + ; Pattern load cues - Angel Island Zone (After)
@@ -268,7 +268,7 @@ You can view the changes in this paragraph or in the GitHub commits [HERE](https
 +
 + PLC2_AIZ1_After: plrlistheader
 +		plreq $500, ArtKosPM_Spikebonker				; spikebonker badnik
-+ PLC2_AIZ1_After_end
++ 		plrlistend
 +
 + ; ===========================================================================
 + ; Pattern load cues - Angel Island Zone (Before)
@@ -276,7 +276,7 @@ You can view the changes in this paragraph or in the GitHub commits [HERE](https
 +
 + PLC1_AIZ2_Before: plrlistheader
 +		plreq $47E, ArtKosPM_GrayButton					; button
-+ PLC1_AIZ2_Before_end
++ 		plrlistend
 +
 + ; ===========================================================================
 + ; Pattern load cues - Angel Island Zone (After)
@@ -284,7 +284,7 @@ You can view the changes in this paragraph or in the GitHub commits [HERE](https
 +
 + PLC2_AIZ2_After: plrlistheader
 +		plreq $500, ArtKosPM_Spikebonker				; spikebonker badnik
-+ PLC2_AIZ2_After_end
++ 		plrlistend
 +
 + ; ===========================================================================
 + ; Pattern load cues - Angel Island Zone (Before)
@@ -292,7 +292,7 @@ You can view the changes in this paragraph or in the GitHub commits [HERE](https
 +
 + PLC1_AIZ3_Before: plrlistheader
 +		plreq $47E, ArtKosPM_GrayButton					; button
-+ PLC1_AIZ3_Before_end
++ 		plrlistend
 +
 + ; ===========================================================================
 + ; Pattern load cues - Angel Island Zone (After)
@@ -300,7 +300,7 @@ You can view the changes in this paragraph or in the GitHub commits [HERE](https
 +
 + PLC2_AIZ3_After: plrlistheader
 +		plreq $500, ArtKosPM_Spikebonker				; spikebonker badnik
-+ PLC2_AIZ3_After_end
++ 		plrlistend
 +
 + ; ===========================================================================
 + ; Pattern load cues - Angel Island Zone (Before)
@@ -308,7 +308,7 @@ You can view the changes in this paragraph or in the GitHub commits [HERE](https
 +
 + PLC1_AIZ4_Before: plrlistheader
 +		plreq $47E, ArtKosPM_GrayButton					; button
-+ PLC1_AIZ4_Before_end
++ 		plrlistend
 +
 + ; ===========================================================================
 + ; Pattern load cues - Angel Island Zone (After)
@@ -316,7 +316,7 @@ You can view the changes in this paragraph or in the GitHub commits [HERE](https
 +
 + PLC2_AIZ4_After: plrlistheader
 +		plreq $500, ArtKosPM_Spikebonker				; spikebonker badnik
-+ PLC2_AIZ4_After_end
++ 		plrlistend
 +
 + ; ===========================================================================
 + ; Level pattern load cues
@@ -330,18 +330,18 @@ You can view the changes in this paragraph or in the GitHub commits [HERE](https
 + PLCAnimals_AIZ1: plrlistheader
 +		plreq $580, ArtKosPM_BlueFlicky
 +		plreq $592, ArtKosPM_Chicken
-+ PLCAnimals_AIZ1_end
++ 		plrlistend
 ```
 ## Data/Uncompressed Data.asm
 ```diff
- incfile.b ArtUnc_AniDEZ__4, "Levels/DEZ/Tiles/Animated/Uncompressed Art/4.unc"
- incfile.b ArtUnc_AniDEZ__5, "Levels/DEZ/Tiles/Animated/Uncompressed Art/5.unc"
- incfile.b ArtUnc_AniDEZ__6, "Levels/DEZ/Tiles/Animated/Uncompressed Art/6.unc"
+ incfile.ba ArtUnc_AniDEZ__4, "Levels/DEZ/Tiles/Animated/Uncompressed Art/4.unc"
+ incfile.ba ArtUnc_AniDEZ__5, "Levels/DEZ/Tiles/Animated/Uncompressed Art/5.unc"
+ incfile.ba ArtUnc_AniDEZ__6, "Levels/DEZ/Tiles/Animated/Uncompressed Art/6.unc"
 
-+ incfile.b ArtUnc_AniAIZ__3, "Levels/AIZ/Tiles/Animated/Uncompressed Art/3.unc"
-+ incfile.b ArtUnc_AniAIZ__4, "Levels/AIZ/Tiles/Animated/Uncompressed Art/4.unc"
-+ incfile.b ArtUnc_AniAIZ__5, "Levels/AIZ/Tiles/Animated/Uncompressed Art/5.unc"
-+ incfile.b ArtUnc_AniAIZ__6, "Levels/AIZ/Tiles/Animated/Uncompressed Art/6.unc"
++ incfile.ba ArtUnc_AniAIZ__3, "Levels/AIZ/Tiles/Animated/Uncompressed Art/3.unc"
++ incfile.ba ArtUnc_AniAIZ__4, "Levels/AIZ/Tiles/Animated/Uncompressed Art/4.unc"
++ incfile.ba ArtUnc_AniAIZ__5, "Levels/AIZ/Tiles/Animated/Uncompressed Art/5.unc"
++ incfile.ba ArtUnc_AniAIZ__6, "Levels/AIZ/Tiles/Animated/Uncompressed Art/6.unc"
 ```
 ## Engine/Constants.asm
 ```diff
@@ -367,7 +367,7 @@ You can view the changes in this paragraph or in the GitHub commits [HERE](https
 ```diff
  Obj_Animal_ZoneAnimals:
 	zoneanimals.b Flicky, Chicken ; DEZ
-+	zoneanimals.b Flicky, Chicken ;
++	zoneanimals.b Flicky, Chicken ; AIZ
 
 	zonewarning Obj_Animal_ZoneAnimals,(1*2)
 ```
@@ -375,7 +375,7 @@ You can view the changes in this paragraph or in the GitHub commits [HERE](https
 ```diff
  .subindex ; $A, $E, $10 only (sub_866BA, sub_866DA, sub_866EC)
 	dc.l sub_866BA ; DEZ
-+	dc.l sub_866BA ; DEZ
++	dc.l sub_866BA ; AIZ
 
 	zonewarning .subindex,(1*4)
 ```
@@ -383,7 +383,7 @@ You can view the changes in this paragraph or in the GitHub commits [HERE](https
 ```diff
  TitleCardLetters_Index: offsetTable
 		offsetTableEntry.w TitleCard_DEZ	; 0
-		offsetTableEntry.w TitleCard_AIZ	; 0
+		offsetTableEntry.w TitleCard_AIZ	; 2
 
 		zonewarning TitleCardLetters_Index,(1*2)
 
@@ -396,15 +396,15 @@ You can view the changes in this paragraph or in the GitHub commits [HERE](https
 ## Screens/Level Select/Level Setup.asm
 ```diff
  ; Variables
-	LevelSelect_ZoneCount:			= ZoneCount
-	LevelSelect_ActDEZCount:		= 4						; DEZ
-+	LevelSelect_ActAIZCount:		= 4						; AIZ
+	LevelSelect.ZoneCount =					ZoneCount
+	LevelSelect.ActDEZCount =				4				; DEZ
++	LevelSelect.ActAIZCount =				4				; AIZ
 ```
 
 ```diff
  .maxacts
-		dc.w LevelSelect_ActDEZCount-1	; DEZ
-+		dc.w LevelSelect_ActAIZCount-1	; AIZ
+		dc.w LevelSelect.ActDEZCount-1	; DEZ
++		dc.w LevelSelect.ActAIZCount-1	; AIZ
 
 		zonewarning .maxacts,(2*1)
 ```
