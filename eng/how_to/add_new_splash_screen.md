@@ -26,7 +26,7 @@ First, let's create a `Splash Screen` folder in the [Screens](https://github.com
 
 For the **Splash Screen**, you’ll need some data, specifically: _tile art, Enigma map, and palettes_. In this guide, we’re adding ready-made data; if you want to make your own picture, you will need to _create your own new files_ — that’s covered in the `"How to Build a Plane?"` guide.
 
-For this guide, we'll grab ready-made data from the [Sonic-1-in-Sonic-3-S.C.E.-](https://www.google.com/search?q=https://github.com/TheBlad768/Sonic-1-in-Sonic-3-S.C.E.-/tree/flamedriver/Screens/Sega) source. 
+For this guide, we'll grab ready-made data from the [Sonic-1-in-Sonic-3-S.C.E.-](https://www.google.com/search?q=https://github.com/TheBlad768/Sonic-1-in-Sonic-3-S.C.E.-/tree/flamedriver/Screens/Sega) source.
 
 Copy the `Enigma Map` and `KosinskiPM Art` directories from [Screens/Sega/S3K](https://github.com/TheBlad768/Sonic-1-in-Sonic-3-S.C.E.-/tree/flamedriver/Screens/Sega/S3K) (in the Sonic-1-in-Sonic-3-S.C.E.- source) into our `Splash Screen` folder:
 
