@@ -133,7 +133,7 @@ Example of code usage in SCE:
 
 ; =============== S U B R O U T I N E =======================================
 
-DEZ1_ScreenInit:
+DEZ1_ForegroundInit:
 
 		; update FG
 		jsr	(Reset_TileOffsetPositionActual).w
@@ -141,10 +141,10 @@ DEZ1_ScreenInit:
 
 ; =============== S U B R O U T I N E =======================================
 
-DEZ1_ScreenEvent:
-		move.w	(Screen_shaking_offset).w,d0		; shake foreground
+DEZ1_ForegroundEvent:
+		move.w	(Screen_shaking_offset).w,d0					; shake foreground
 		add.w	d0,(Camera_Y_pos_copy).w
-		jmp	(DrawTilesAsYouMove).w
+		jmp	(Draw_FGAsYouMove).w
 
 ; =============== S U B R O U T I N E =======================================
 
@@ -169,7 +169,6 @@ DEZ1_BackgroundEvent:
 .deform
 		lea	DEZ1_BGDeformArray(pc),a4
 		jsr	(DeformScroll).w
-
 		jmp	(ShakeScreen_Setup).w
 ; ---------------------------------------------------------------------------
 
