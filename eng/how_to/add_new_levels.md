@@ -75,7 +75,7 @@ You need to add the data for the new zone to the following existing files:
 - Objects/Main/Animals/Animals.asm
 - Objects/Main/Egg Capsule/Egg Capsule.asm
 - Objects/Main/Title Card/Text Data/VRAM - Text.asm
-- Screens/Level Select/Level Setup.asm
+- Screens/Level Select/Level Select.asm
 
 # Example of changes
 
@@ -393,7 +393,7 @@ You can view the changes in this paragraph or in the GitHub commits [HERE](https
 +TitleCard_AIZ:		titlecardLetters FALSE, "DEATH EGG"
 +	even
 ```
-## Screens/Level Select/Level Setup.asm
+## Screens/Level Select/Level Select.asm
 ```diff
  ; Variables
 	LevelSelect.ZoneCount =					ZoneCount
