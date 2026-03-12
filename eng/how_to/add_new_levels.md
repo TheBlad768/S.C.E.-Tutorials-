@@ -30,13 +30,13 @@ Do not change `mus_DEZ1` to `mus_AIZ1` in these files yet; we will do that in th
 To start, we need to change the number of levels in [Engine/Settings.asm]([Engine/Settings.asm)
 
 ```
-ZoneCount:				= 1	; set discrete zones are: DEZ
+ZoneCount =						1				; set discrete zones are: DEZ
 ```
 
 Change the "1" to the number of levels you need.
 
 ```
-ZoneCount:				= 2	; set discrete zones are: DEZ, New Zone
+ZoneCount =						2				; set discrete zones are: DEZ, New Zone
 ```
 
 > [!TIP]
