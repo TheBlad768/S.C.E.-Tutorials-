@@ -13,7 +13,11 @@ This compression was removed because having two compressions(Kosinski Plus Modul
 
 #### Here is the old GitHub branch with Nemesis, if you need it:
 
-- [Nemesis Decompression](https://github.com/TheBlad768/Sonic-Clean-Engine-S.C.E.-/blob/9bc3d666b30c25893942aa04cecab667734e38a7/Data/Decompression/Nemesis%20Decompression.asm)
+- [Nemesis Decompression](https://github.com/TheBlad768/Sonic-Clean-Engine-S.C.E.-/blob/7eb128ea09f58c2fb71993c8d15c20001cad7c39/Data/Decompression/Nemesis%20Decompression.asm)
+
+#### Here is an archive with an updated version of SCE Nemesis compression, if you need it:
+
+- [SCE Nemesis](../../_code/SCE(Nemesis).7z)
 
 ## View other guides
 
